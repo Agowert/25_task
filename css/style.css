@@ -1,0 +1,264 @@
+/*
+   1. Базовые сбросы стилей и глобальные параметры
+ */
+*
+{
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box; 
+}
+
+html, body 
+{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.content_wrapper
+{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*
+   2. Шапка сайта и меню (Десктопная версия)
+ */
+.topmenu
+{
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top_logo
+{
+    padding: 0 37px;
+    line-height: 24px;
+    background-image: url('../images/logo.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    font: 700 24px/1 'Roboto', sans-serif;
+    color: #99746a;
+}
+
+.top_logo .secondary_color
+{
+    color: #e56a77;
+}
+
+/* Кнопка-гамбургер (По умолчанию скрыта на больших компьютерах) */
+.hamburger_menu
+{
+    display: none;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    background: none;
+}
+
+.hamburger_menu span,
+.hamburger_menu::before,
+.hamburger_menu::after
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger_menu::before { top: 0; }
+.hamburger_menu span { top: 9px; }
+.hamburger_menu::after { bottom: 0; }
+
+
+/*
+   3. Главный промо-блок
+ */
+.top_block
+{
+    min-height: 348px;
+    background: url('../images/top-block.jpg') no-repeat top center;
+    background-size: cover;
+    padding: 70px 55px;
+}
+
+.promo_title
+{
+    font: 300 48px/1.125 'Open Sans', sans-serif;
+    color: #fff;
+    margin: 0 0 46px;
+}
+
+.promo_button
+{
+    border: 1px solid #fff;
+    border-radius: 25px;
+    padding: 0 38px;
+    font: 300 18px/48px 'Open Sans', sans-serif;
+    color: #fff;
+    background: none;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.promo_button:hover
+{
+    color: #333;
+    background-color: #fff;
+}
+
+
+/*
+   4. Блок с премьерами фильмов (Десктопная версия от 1200px до 1920px)
+ */
+.main_wrapper
+{
+    padding: 40px 0 20px;
+}
+
+.moovies_title
+{
+    font: 300 48px/54px 'Open Sans', sans-serif;
+    color: #333;
+    margin: 0 0 38px;
+}
+
+.moovies_wrapper
+{
+    margin: 0 -15px;
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.moovie_container
+{
+    padding: 0 15px;
+    flex: 1 1 300px; 
+    margin-bottom: 40px;
+}
+
+.moovie_poster
+{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.moovie_title
+{
+    font: 400 30px/1.325 'Open Sans', sans-serif;
+    color: #333;
+    margin: 0 0 20px;
+}
+
+.moovie_description
+{
+    font: 400 15px/1.75 'Open Sans', sans-serif;
+    color: #333;
+}
+
+
+/*
+   5. Подвал (Footer)
+ */
+.footer
+{
+    background: #eee;
+    padding: 20px 20px;
+}
+
+.footer_container
+{
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.footer_container .copyright
+{
+    text-align: center;
+    font: 15px/1.5 'Open Sans', sans-serif;
+    color: #333;
+}
+
+.footer_link
+{
+    color: #000;
+    text-decoration: underline;
+}
+
+.footer_link:hover
+{
+    text-decoration: none;
+}
+
+
+/* 
+   6. АДАПТИВНОСТЬ: Медиазапрос для экранов меньше 1200px (Планшеты и Мобильные)
+ */
+@media screen and (max-width: 1200px)
+{
+
+    .topmenu,
+    .main_wrapper,
+    .top_block
+    {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+ .topmenu
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hamburger_menu
+    {
+        display: block;
+        margin-right: 20px;
+    }
+
+
+    .promo_title,
+    .moovies_title
+    {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 25px;
+    }
+
+
+    .top_block
+    {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+
+    .moovie_container
+    {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 50px;
+    }
+
+
+    .moovie_poster
+    {
+        margin: 0 auto 20px;
+    }
+}
